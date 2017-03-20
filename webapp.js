@@ -1,18 +1,13 @@
 // JavaScript Document
 
 //These are the variables for the number of pokeballs and the pokemon.
-var pokeballs =  {
-    purchased:0
-    };
-var greatballs =  {
-    purchased:0
-    };
-var ultraballs =  {
-    purchased:0
-    };
-var masterballs =  {
-    purchased:0
-    };
+var pokeballs = 0;
+    
+var greatballs = 0;
+    
+var ultraballs = 0;
+   
+var masterballs = 0;
 
 var bulbasaur =  {
     price:10
@@ -87,7 +82,7 @@ function save_cookies() {
 	document.cookie = "masterballs=" + masterballs + "; " + expires;
 
 	
-	document.cookie = "bulbasaur=" + bulbasaur + "; " + expires;
+	document.cookie = "bulbasaur=" + bulbasaur.purchased + ": " + bulbasaur.bonus + ": " + "; " + expires;
 	document.cookie = "charmander=" + charmander + "; " + expires;
 	document.cookie = "Squirtle=" + Squirtle + "; " + expires;
 	document.cookie = "Pikachu=" + Pikachu + "; " + expires;
@@ -192,90 +187,90 @@ function shop(pokemon) {
 	switch(pokemon) {
 		
 		case "bulbasaur":
-			if(pokeballs>=10) {
-				bulbasaur++;
-				pokeballs-=10;
+			if(pokeballs>=bulbasaur.price) {
+				bulbasaur.purchased++;
+				pokeballs-=bulbasaur.price;
 			}
 			else {
 				alert("Please collect more pokeballs.");
 				}
 			break;
 		case "charmander":
-			if(pokeballs>=150) {
-				charmander++;
-				pokeballs-=150;
+			if(pokeballs>=charmander.price) {
+				charmander.purchased++;
+				pokeballs-=charmander.price;
 			}
 			else {
 				alert("Please collect more pokeballs.");
 				}
 			break;
 		case "Squirtle":
-			if(pokeballs>=2500) {
-				Squirtle++;
-				pokeballs-=2500;
+			if(pokeballs>=Squirtle.price) {
+				Squirtle.purchased++;
+				pokeballs-=Squirtle.price;
 			}
 			else {
 				alert("Please collect more pokeballs.");
 				}
 			break;
 		case "Pikachu":
-			if(pokeballs>=24200) {
-				Pikachu++;
-				pokeballs-=24200;
+			if(pokeballs>=Pikachu.price) {
+				Pikachu.purchased++;
+				pokeballs-=Pikachu.price;
 			}
 			else {
 				alert("Please collect more pokeballs.");
 				}
 			break;
 		case "Leafeon":
-			if(pokeballs>=45000) {
-				Leafeon++;
-				pokeballs-=45000;
+			if(pokeballs>=Leafeon.price) {
+				Leafeon.purchased++;
+				pokeballs-=Leafeon.price;
 			}
 			else {
 				alert("Please collect more pokeballs.");
 				}
 			break;
 		case "Ratatta":
-			if(pokeballs>=75500) {
-				Ratatta++;
-				pokeballs-=75500;
+			if(pokeballs>=Ratatta.price) {
+				Ratatta.purchased++;
+				pokeballs-=Ratatta.price;
 			}
 			else {
 				alert("Please collect more pokeballs.");
 				}
 			break;
 		case "Nidoran":
-			if(pokeballs>=300000) {
-				Nidoran++;
-				pokeballs-=300000;
+			if(pokeballs>=Nidoran.price) {
+				Nidoran.purchased++;
+				pokeballs-=Nidoran.price;
 			}
 			else {
 				alert("Please collect more pokeballs.");
 				}
 			break;
 		case "Drantini":
-			if(pokeballs>420000) {
-				Drantini++;
-				pokeballs-=420000;
+			if(pokeballs>Drantini.price) {
+				Drantini.purchased++;
+				pokeballs-=Drantini.price;
 			}
 			else {
 				alert("Please collect more pokeballs.");
 				}
 			break;
 		case "MewTwo":
-			if(pokeballs>4000000) {
-				MewTwo++;
-				pokeballs-=4000000;
+			if(pokeballs>MewTwo.price) {
+				MewTwo.purchased++;
+				pokeballs-=MewTwo.price;
 			}
 			else {
 				alert("Please collect more pokeballs.");
 				}
 			break;
 		case "Arceus":
-			if(pokeballs>=15000000) {
-				Arceus++;
-				pokeballs-=15000000;
+			if(pokeballs>=Arceus.price) {
+				Arceus.purchased++;
+				pokeballs-=Arceus.price;
 			}
 			else {
 				alert("Please collect more pokeballs.");
@@ -395,25 +390,25 @@ function bonus() {
 					
 					}*/
 				
-		pokeballs+= bulbasaur * 0.2;
+		pokeballs+= bulbasaur * bulbasaur.bonus;
 	
-		pokeballs+= charmander * 3;
+		pokeballs+= charmander * charmander.bonus;
 
-		pokeballs+= Squirtle * 31;
+		pokeballs+= Squirtle * Squirtle.bonus;
 		
-		pokeballs+= Pikachu * 320;
+		pokeballs+= Pikachu * Pikachu.bonus;
 		
-		pokeballs+= Leafeon * 420;
+		pokeballs+= Leafeon * Leafeon.bonus;
 		
-		pokeballs+= Ratatta * 650;
+		pokeballs+= Ratatta * Ratatta.bonus;
 		
-		pokeballs+= Nidoran * 2200;
+		pokeballs+= Nidoran * Nidoran.bonus;
 		
-		pokeballs+= Drantini * 4000;
+		pokeballs+= Drantini * Drantini.bonus;
 		
-		pokeballs+= MewTwo * 47000;
+		pokeballs+= MewTwo * MewTwo.bonus;
 		
-		pokeballs+= Arceus * 250000;
+		pokeballs+= Arceus * Arceus.bonus;
 		
 		update();
 		
@@ -423,7 +418,7 @@ function bonus() {
 //This is the clicks per second function. This tells you how many clicks per second you get with your pokemon.
 function clickspersecond() {
 	
-	document.getElementById("numberofclicks").value = Math.round( 10 *[(bulbasaur * 0.2) + (charmander * 3) + (Squirtle * 31) + (Pikachu * 320) + (Leafeon * 420) + ( Ratatta * 650) + (Nidoran * 2200) + (Drantini * 4000) + (MewTwo * 47000) + (Arceus * 250000)] )/10;
+	document.getElementById("numberofclicks").value = Math.round( 10 *[(bulbasaur * bulbasaur.bonus) + (charmander * charmander.bonus) + (Squirtle * Squirtle.bonus) + (Pikachu * Pikachu.bonus) + (Leafeon * Leafeon.bonus) + (Ratatta * Ratatta.bonus) + (Nidoran * Nidoran.bonus) + (Drantini * Drantini.bonus) + (MewTwo * MewTwo.bonus) + (Arceus * Arceus.bonus)] )/10;
 	
 }
 
