@@ -1,45 +1,44 @@
 @charset "UTF-8";
 /* CSS Document */
+#d {
+   margin-bottom: 10px;
+   margin-right: 10px;
+}
 
+#d:active {
+   margin-top: 10px;
+margin-left:10px;
+}
 .box{
-	height: 360px;
-	width: 250px;
-	border-radius: 10px;
-	position: relative;
-	top: 0px;
-	left: 0%;
+    height: 360px;
+    width: 250px;
+    border-radius: 10px;
+    position: relative;
+    top: 0px;
+    left: 0%;
+    
 }
 .box1{
-	width: 250px;
-	height: 900px;
-	background-color:#007DE8;
-	position: fixed;
-	top: 0px;
-	float: right;
-	right:265px;
-	border-radius:25px;
-	overflow: scroll;
-}
-.box2{
-	width: 250px;
-	height:700px;
-	background-color:#007DE8;
-	position: fixed;
-	top: 0px;
-	float: right;
-	right:0%;
-border-radius:25px;
+    width: 250px;
+    height: 900px;
+    background-color:#007DE8 ;
+    position: fixed;
+    top: 0px;
+    float: right;
+    right:1px;
+    border-radius:25px;
+    overflow: scroll;
 }
 body{
-    background-image:url(images/Alakazam.jpg)
+   background-image:url(images/Alakazam.jpg)
 }
 
 button {
 
-    background: transparent;
-    border: none !important;
-    font-size:0;
-	border-radius:10px;
+   background: transparent;
+   border: none !important;
+   font-size:0;
+    border-radius:10px;
 }
 
 #menu
@@ -49,66 +48,66 @@ height: 100%;
 }
 
 @media screen and (max-width : 980px ){
-    #.box {
-        width: 94%;
-    }
-    #.display {
-        width: 75%;
-    }
-    #.pokeball {
-        width: 90%;
-    }
+   #.box {
+       width: 94%;
+   }
+   #.display {
+       width: 75%;
+   }
+   #.pokeball {
+       width: 90%;
+   }
 }
 
 @media screen and (max-width: 700px) {
-    #.box1, #.pokemon {
-        width: auto;
-        float: none;
+   #.box1, #.pokemon {
+       width: auto;
+       float: none;
 }
-    #.box2 {
-        height: auto;
-    }
+   #.box2 {
+       height: auto;
+   }
 }
 @media screen and (max-width: 480px)
 {    
-    #.audio
-    {    
-        height: auto;
-    }    
-    h1
-    {
-        font-size: 24px;
-    }
-    #.box
-    {
-        float: none;
-    }
+   #.audio
+   {    
+       height: auto;
+   }    
+   h1
+   {
+       font-size: 24px;
+   }
+   #.box
+   {
+       float: none;
+   }
 }
 /* Phones */
 @media only screen
 and (min-device-width: 320px)
 and (max-device-width: 568px)
 {
-        body  
-        {
-                font-size: 40px;
-        }
-        #.display
-        {
-            height: auto;
-        }
-        #.box1
-        {
-            width:auto;
-        }
-        #.pokemon
-        {
-            width: auto;
-            clear: both;
-        }
-        #.box2, #.display, #.box, #.box2
-        {
-            border-radius: 16px;
-            border-width: 8px;
-        }
+       body  
+       {
+               font-size: 40px;
+       }
+       #.display
+       {
+           height: auto;
+       }
+       #.box1
+       {
+           width:auto;
+       }
+       #.pokemon
+       {
+           width: auto;
+           clear: both;
+       }
+       #.box2, #.display, #.box, #.box2
+       {
+           border-radius: 16px;
+           border-width: 8px;
+       }
 }
