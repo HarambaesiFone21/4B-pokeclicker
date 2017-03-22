@@ -7,7 +7,7 @@
 
 #d:active {
    margin-top: 10px;
-margin-left:10px;
+   margin-left:10px;
 }
 .box{
     height: 360px;
@@ -30,7 +30,7 @@ margin-left:10px;
     overflow: scroll;
 }
 body{
-   background-image:url(images/Alakazam.jpg)
+    background-image:url(images/Alakazam.jpg)
 }
 
 button {
@@ -38,13 +38,13 @@ button {
    background: transparent;
    border: none !important;
    font-size:0;
-    border-radius:10px;
+   border-radius:10px;
 }
 
 #menu
 {
-border-left: 1px solid black;
-height: 100%;
+   border-left: 1px solid black;
+   height: 100%;
 }
 
 @media screen and (max-width : 980px ){
