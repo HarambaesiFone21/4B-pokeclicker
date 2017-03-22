@@ -6,8 +6,17 @@ var greatballs = 0;
 var ultraballs = 0;
 var masterballs = 0;
 
-var bulbasaur = 0;
-var charmander = 0;
+var bulbasaur = 0;/*{
+	
+purchased:0
+bonus:0.2
+	
+	}*/
+var charmander = 0;/*{
+	purchased:0
+	bonus:3
+	
+	}*/
 var Squirtle = 0;
 var Pikachu = 0;
 var Leafeon = 0;
@@ -17,9 +26,18 @@ var Drantini = 0;
 var MewTwo = 0;
 var Arceus = 0;
 
-//COOKIES
+var Ivysaur = 0;
+var Charmeleon =0;
+var Wartortle = 0;
+var Raticate = 0;
+var Nidorino = 0;
+var Dragonair = 0; 
 
+window.onload=load_cookies;
+//COOKIES
+//This saves the cookies. 
 function save_cookies() {
+	//This creates a experation date 120 days from when the person enters the app.
 	var d = new Date();
 	d.setTime(d.getTime() + (120*24*60*60*1000));
 	var expires = "expires="+ d.toUTCString();
@@ -125,6 +143,7 @@ function buttonClick() {
 	ultraballbonus();
 	masterballbonus();
 	update();
+	save_cookies();
 }
 
 
@@ -205,7 +224,7 @@ function shop(pokemon) {
 				alert("Please collect more pokeballs.");
 				}
 			break;
-				case "MewTwo":
+		case "MewTwo":
 			if(pokeballs>4000000) {
 				MewTwo++;
 				pokeballs-=4000000;
@@ -232,7 +251,7 @@ function shop(pokemon) {
 				alert("Please collect more pokeballs.");
 			}
 			break;
-			case "Ultraball":
+		case "Ultraball":
 			if(pokeballs>=15000) {
 				ultraballs++;
 				pokeballs-=15000;
@@ -241,7 +260,7 @@ function shop(pokemon) {
 				alert("Please collect more pokeballs.");
 				}
 			break;
-				case "masterballs":
+		case "masterballs":
 			if(pokeballs>=1500000) {
 				masterballs++;
 				pokeballs-=1500000;
@@ -249,7 +268,61 @@ function shop(pokemon) {
 			else {
 				alert("Please collect more pokeballs.");
 				}
-			break;		
+			break;	
+		case "Ivysaur":
+			if(pokeballs>=10000) {
+				Ivysaur++;
+				pokeballs-=10000;
+			}
+			else {
+				alert("Please collect more pokeballs.");
+				}
+			break;	
+		case "Charmeleon":
+			if(pokeballs>=100000) {
+				Charmeleon++;
+				pokeballs-=100000;
+			}
+			else {
+				alert("Please collect more pokeballs.");
+				}
+			break;	
+		case "Wartortle":
+			if(pokeballs>=600000) {
+				Wartortle++;
+				pokeballs-=600000;
+			}
+			else {
+				alert("Please collect more pokeballs.");
+				}
+			break;	
+		case "Raticate":
+			if(pokeballs>=500000) {
+				Raticate++;
+				pokeballs-=500000;
+			}
+			else {
+				alert("Please collect more pokeballs.");
+				}
+			break;	
+		case "Nidorino":
+			if(pokeballs>=1000000) {
+				Nidorino++;
+				pokeballs-=1000000;
+			}
+			else {
+				alert("Please collect more pokeballs.");
+				}
+			break;	
+		case "Dragonair":
+			if(pokeballs>=2500000) {
+				Dragonair++;
+				pokeballs-=2500000;
+			}
+			else {
+				alert("Please collect more pokeballs.");
+				}
+			break;	
 		default:
 			alert("Please collect more pokeballs.");
 			break;
@@ -257,16 +330,32 @@ function shop(pokemon) {
 			
 	}
 	update();
+	save_cookies();
 }
+
+
+//EVOLUTIONS
+//when a player buys an evoltion change value of Charmander by a percentage
+// Pokemons wiht Evolutions Bulbasaur(Increase 1000%) Charmander (Increase 750%) Wartortle (500%) Raticate (Increase 200%) Nidorian (150%) Dratini (Increase 150%) Mewtwo (Still thinking :3)
+
 
 
 //This is the setInterval that makes it so that the pokemon add pokeballs over time. It does this by activating the bonus function.
 	setInterval(bonus,1000);
 
 	
-//This function is the bonus function that controlls how many pokeballs you get per second base on the number of pokemon you have.
+//This function is the bonus function that controlls how many pokeballs you get per second based on the number of pokemon you have.
 function bonus() {
 	
+		/*switch(pokemon) {
+			
+			case "Ivysaur": 
+				if(Ivysaur>=1) {
+					
+					var clickspersecondb = 0.2
+					
+					}*/
+				
 		pokeballs+= bulbasaur * 0.2;
 	
 		pokeballs+= charmander * 3;
@@ -290,6 +379,7 @@ function bonus() {
 		update();
 		
 		clickspersecond();
+		save_cookies();
 }
 //This is the clicks per second function. This tells you how many clicks per second you get with your pokemon.
 function clickspersecond() {

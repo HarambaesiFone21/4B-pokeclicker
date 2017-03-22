@@ -19,10 +19,10 @@ Insert answer here.
 
 
 ### Changes
- * We made it possible to scroll to buy your pokemon/pokeballs in the pokemon/pokeball shop.
- * Cookies were added (ability to save data)
- * Mewto, Leafeon, and masterball, were added as new pokemon/pokeballs to the Pokemon Shop.
- * We added music to the game.
+* We made it possible to scroll to buy your pokemon/pokeballs in the pokemon/pokeball shop.
+* Cookies were added (ability to save data)
+* Mewto, Leafeon, and masterball, were added as new pokemon/pokeballs to the Pokemon Shop.
+* We added music to the game.
 
 
 
